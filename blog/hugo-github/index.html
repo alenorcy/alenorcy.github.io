@@ -63,7 +63,7 @@
 <p><img src=/images/Selection_470.png alt="Repository name"></p>
 <p>Github vous indique ensuite quelques conseils d&rsquo;utilisation :</p>
 <p><img src=/images/Selection_471.png alt="Git advice"></p>
-<h2 id=2>Création du site en local (ici sur Ubuntu)<a class=anchor href=#2>#</a></h2>
+<h2 id=2>Création du site en local (sur Ubuntu)<a class=anchor href=#2>#</a></h2>
 <p>Installation de Hugo (sur Ubuntu 20.04) :</p>
 <pre><code>snap install hugo --channel=extended
 </code></pre>
@@ -71,12 +71,12 @@
 <pre><code>hugo new site alenorcy.github.io
 </code></pre>
 <h2 id=3>Création du dépôt Git local<a class=anchor href=#3>#</a></h2>
-<p>On crée le dépôt local et on récupère le thème <a href=https://github.com/jakewies/hugo-theme-codex target=_blank rel="noreferrer noopener">codex</a>)</p>
+<p>On crée le dépôt local et on récupère le thème <a href=https://github.com/jakewies/hugo-theme-codex target=_blank rel="noreferrer noopener">codex</a> :</p>
 <pre><code>cd alenorcy.github.io
 git init
 </code></pre>
 <h2 id=4>Mise en place d&rsquo;un thème pour Hugo<a class=anchor href=#4>#</a></h2>
-<p>On choisit le thmès <strong>codex</strong></p>
+<p>On choisit le thème <strong>codex</strong></p>
 <pre><code>git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
 cp themes/hugo-theme-codex/exampleSite/config.toml .
 </code></pre>
@@ -141,7 +141,7 @@ jobs:
 <pre><code>git pull
 </code></pre>
 <p>Et c&rsquo;est terminé :-)</p>
-<p>On peut ensuite mettre à jour son site en local.. et pousser les modifications sur Github :</p>
+<p>On peut ensuite mettre à jour son site en local&mldr; et pousser les modifications sur Github :</p>
 <pre><code>git add .
 git commit -m &quot;mes modifications blabla&quot;
 git push -u origin main
