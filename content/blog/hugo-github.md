@@ -29,7 +29,7 @@ Depuis votre profil, cliquez sur l'onglet sur _Repositories_ puis sur le bouton 
 
 Saisissez un nom avec ce format **[login].github.io** (attention ce format précis est indispensable !) :
 
-![Repository name](/images/Selection_470.png)
+![Repository name](/images/Selection_518.png)
 
 Github vous indique ensuite quelques conseils d'utilisation :
 
