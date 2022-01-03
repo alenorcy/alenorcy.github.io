@@ -36,7 +36,7 @@ Github vous indique ensuite quelques conseils d'utilisation :
 ![Git advice](/images/Selection_471.png)
 
 
-## Création du site en local (ici sur Ubuntu) {#2}
+## Création du site en local (sur Ubuntu) {#2}
 
 Installation de Hugo (sur Ubuntu 20.04) :
 ```
@@ -50,7 +50,7 @@ hugo new site alenorcy.github.io
 
 ## Création du dépôt Git local {#3}
 
-On crée le dépôt local et on récupère le thème [codex](https://github.com/jakewies/hugo-theme-codex))
+On crée le dépôt local et on récupère le thème [codex](https://github.com/jakewies/hugo-theme-codex) :
 ```
 cd alenorcy.github.io
 git init
@@ -58,7 +58,7 @@ git init
 
 ## Mise en place d'un thème pour Hugo {#4}
 
-On choisit le thmès **codex**
+On choisit le thème **codex**
 ```
 git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
 cp themes/hugo-theme-codex/exampleSite/config.toml .
@@ -140,7 +140,7 @@ git pull
 
 Et c'est terminé :-)
 
-On peut ensuite mettre à jour son site en local.. et pousser les modifications sur Github :
+On peut ensuite mettre à jour son site en local... et pousser les modifications sur Github :
 
 ```
 git add .
