@@ -1,0 +1,184 @@
+<!doctype html><html lang=en-us>
+<head>
+<title>Faire un site statique avec Hugo et l'héberger sur Github | Arnaud LE NORCY</title>
+<meta charset=utf-8>
+<meta name=language content="en">
+<meta name=description content>
+<meta name=keywords content>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Faire un site statique avec Hugo et l'héberger sur Github">
+<meta name=twitter:description content>
+<meta name=twitter:site content="https://twitter.com/arnaudlenorcy">
+<meta name=twitter:creator content="https://twitter.com/arnaudlenorcy">
+<link rel="shortcut icon" type=image/png href=/favicon.ico>
+<link type=text/css rel=stylesheet href=/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0=">
+<link type=text/css rel=stylesheet href=/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lenorcy.fr\/"},"articleSection":"blog","name":"Faire un site statique avec Hugo et l\u0027héberger sur Github","headline":"Faire un site statique avec Hugo et l\u0027héberger sur Github","description":"","inLanguage":"en-US","author":"","creator":"","publisher":"","accountablePerson":"","copyrightHolder":"","copyrightYear":"2021","datePublished":"2021-11-28 21:36:49 \u002b0100 \u002b0100","dateModified":"2021-11-28 21:36:49 \u002b0100 \u002b0100","url":"https:\/\/www.lenorcy.fr\/blog\/hugo-github\/","wordCount":"428","keywords":["Blog"]}</script>
+</head>
+<body>
+<div class=burger__container>
+<div class=burger aria-controls=navigation aria-label=Menu>
+<div class="burger__meat burger__meat--1"></div>
+<div class="burger__meat burger__meat--2"></div>
+<div class="burger__meat burger__meat--3"></div>
+</div>
+</div>
+<nav class=nav id=navigation>
+<ul class=nav__list>
+<li>
+<a href=/> accueil</a>
+</li>
+<li>
+<a class=active href=/blog>blog</a>
+</li>
+</ul>
+</nav>
+<main>
+<div class=flex-wrapper>
+<div class=post__container>
+<div class=post>
+<header class=post__header>
+<h1 id=post__title>Faire un site statique avec Hugo et l'héberger sur Github</h1>
+<time datetime="2021-11-28 21:36:49 +0100 +0100" class=post__date>Nov 28 2021</time>
+</header>
+<article class=post__content>
+<p>Voici la procédure pour créer une site statique avec <a href=https://gohugo.io/ target=_blank rel="noreferrer noopener">Hugo</a> et l&rsquo;héberger sur <a href=https://github.com target=_blank rel="noreferrer noopener">github</a> !</p>
+<p><em>Pré-requis : avoir déjà créé un compte Github</em></p>
+<ul>
+<li><a href=#1>Création d&rsquo;un repository Github</a></li>
+<li><a href=#2>Création du site en local (sur Ubuntu)</a></li>
+<li><a href=#3>Création du dépôt Git local</a></li>
+<li><a href=#4>Mise en place d&rsquo;un thème pour Hugo</a></li>
+<li><a href=#5>Premier test</a></li>
+<li><a href=#6>Première synchronisation distante</a></li>
+<li><a href=#7>Configuration finale sur le repositoy Github</a></li>
+</ul>
+<h2 id=1>Création du repository Github<a class=anchor href=#1>#</a></h2>
+<p>Depuis votre profil, cliquez sur l&rsquo;onglet sur <em>Repositories</em> puis sur le bouton <em>New</em> :</p>
+<p><img src=/images/Selection_516.png alt="New repository Github"></p>
+<p>Saisissez un nom avec ce format <strong>[login].github.io</strong> (attention ce format précis est indispensable !) :</p>
+<p><img src=/images/Selection_470.png alt="Repository name"></p>
+<p>Github vous indique ensuite quelques conseils d&rsquo;utilisation :</p>
+<p><img src=/images/Selection_471.png alt="Git advice"></p>
+<h2 id=2>Création du site en local (ici sur Ubuntu)<a class=anchor href=#2>#</a></h2>
+<p>Installation de Hugo (sur Ubuntu 20.04) :</p>
+<pre><code>snap install hugo --channel=extended
+</code></pre>
+<p>Création du site avec <a href=https://gohugo.io/ target=_blank rel="noreferrer noopener">Hugo</a> :</p>
+<pre><code>hugo new site alenorcy.github.io
+</code></pre>
+<h2 id=3>Création du dépôt Git local<a class=anchor href=#3>#</a></h2>
+<p>On crée le dépôt local et on récupère le thème <a href=https://github.com/jakewies/hugo-theme-codex target=_blank rel="noreferrer noopener">codex</a>)</p>
+<pre><code>cd alenorcy.github.io
+git init
+</code></pre>
+<h2 id=4>Mise en place d&rsquo;un thème pour Hugo<a class=anchor href=#4>#</a></h2>
+<p>On choisit le thmès <strong>codex</strong></p>
+<pre><code>git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
+cp themes/hugo-theme-codex/exampleSite/config.toml .
+</code></pre>
+<p>On modifie quelques lignes du fichier <em>config.toml</em> :</p>
+<ul>
+<li>On commente la ligne <strong>themesDir = &ldquo;../../"</strong>,</li>
+<li>On modifie <strong>title</strong>, <strong>baseURL</strong> dans les paramètres globales,</li>
+<li>On modifie <strong>twitter</strong> et <strong>github</strong> dans les paramètres optionels [params],</li>
+</ul>
+<h2 id=5>Premier test<a class=anchor href=#5>#</a></h2>
+<p>Lancement du site en local :</p>
+<pre><code>hugo server -D
+</code></pre>
+<p>En lançant l&rsquo;URL http://localhost:1313/ dans son navigateur, on peut vérifier si le site statique est OK :</p>
+<p><img src=/images/screenshot-hugo.png alt="Hugo desktop screenshot"></p>
+<h2 id=6>Première synchronisation distante<a class=anchor href=#6>#</a></h2>
+<p>On envoie les fichiers locaux vers la branche distante (main) :</p>
+<pre><code>git add .
+git commit -m &quot;premier commit&quot;
+git branch -M main
+git remote add origin https://*******-mon_token-***********@github.com/alenorcy/alenorcy.github.io.git
+git push -u origin main
+</code></pre>
+<h2 id=7>Configuration finale sur le repositoy Github<a class=anchor href=#7>#</a></h2>
+<p>Dans Settings > Pages > Source, on positionne construction du site statique dans la branche distante &ldquo;gh-pages&rdquo; :
+<img src=/images/Selection_517.png alt=gh-pages></p>
+<p>On créé le fichier <em>.github/workflows/gh-pages.yml</em> suivant (depuis l&rsquo;interface de Github dans la branche <strong>main</strong>) :</p>
+<pre><code>name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+</code></pre>
+<p>On le récupère en local :</p>
+<pre><code>git pull
+</code></pre>
+<p>Et c&rsquo;est terminé :-)</p>
+<p>On peut ensuite mettre à jour son site en local.. et pousser les modifications sur Github :</p>
+<pre><code>git add .
+git commit -m &quot;mes modifications blabla&quot;
+git push -u origin main
+</code></pre>
+<p>Liens :</p>
+<ul>
+<li><a href=https://gohugo.io/getting-started/quick-start/ target=_blank rel="noreferrer noopener">https://gohugo.io/getting-started/quick-start/</a></li>
+<li><a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/ target=_blank rel="noreferrer noopener">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
+</ul>
+<p>Bonne journée.</p>
+</article>
+<ul class=tags__list>
+<li class=tag__item>
+<a class=tag__link href=https://www.lenorcy.fr/tags/hugo/>hugo</a>
+</li>
+<li class=tag__item>
+<a class=tag__link href=https://www.lenorcy.fr/tags/web/>web</a>
+</li></ul>
+<div class=pagination>
+</div>
+<footer class=post__footer>
+<div class=social-icons>
+<a class=social-icons__link title=Twitter href=https://twitter.com/arnaudlenorcy target=_blank rel="me noopener">
+<div class=social-icons__icon style=background-image:url(https://www.lenorcy.fr/svg/twitter.svg)></div>
+</a>
+<a class=social-icons__link title=GitHub href=https://github.com/alenorcy target=_blank rel="me noopener">
+<div class=social-icons__icon style=background-image:url(https://www.lenorcy.fr/svg/github.svg)></div>
+</a>
+</div>
+<p>© 2022</p>
+</footer>
+</div>
+</div>
+</div>
+</main>
+<script src=/js/index.min.575dda8d49ee02639942c63564273e6da972ab531dda26a08800bdcb477cbd7f.js integrity="sha256-V13ajUnuAmOZQsY1ZCc+balyq1Md2iagiAC9y0d8vX8=" crossorigin=anonymous></script>
+<script src=https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js></script>
+<script src=https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js data-autoloader-path=https://unpkg.com/prismjs@1.20.0/components/></script>
+</body>
+</html>
