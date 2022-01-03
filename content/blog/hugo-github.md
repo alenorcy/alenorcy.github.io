@@ -50,7 +50,7 @@ hugo new site alenorcy.github.io
 
 ## Création du dépôt Git local {#3}
 
-On crée le dépôt local et on récupère le thème [codex](https://github.com/jakewies/hugo-theme-codex) :
+On crée le dépôt local :
 ```
 cd alenorcy.github.io
 git init
@@ -58,7 +58,7 @@ git init
 
 ## Mise en place d'un thème pour Hugo {#4}
 
-On choisit le thème **codex**
+On choisit le thème [codex](https://github.com/jakewies/hugo-theme-codex) :
 ```
 git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
 cp themes/hugo-theme-codex/exampleSite/config.toml .
