@@ -16,7 +16,7 @@
 <link rel="shortcut icon" type=image/png href=/favicon.ico>
 <link type=text/css rel=stylesheet href=/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0=">
 <link type=text/css rel=stylesheet href=/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lenorcy.fr\/"},"articleSection":"blog","name":"Faire un site statique avec Hugo et l\u0027héberger sur Github","headline":"Faire un site statique avec Hugo et l\u0027héberger sur Github","description":"","inLanguage":"en-US","author":"","creator":"","publisher":"","accountablePerson":"","copyrightHolder":"","copyrightYear":"2021","datePublished":"2021-11-28 21:36:49 \u002b0100 \u002b0100","dateModified":"2021-11-28 21:36:49 \u002b0100 \u002b0100","url":"https:\/\/www.lenorcy.fr\/blog\/hugo-github\/","wordCount":"428","keywords":["Blog"]}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lenorcy.fr\/"},"articleSection":"blog","name":"Faire un site statique avec Hugo et l\u0027héberger sur Github","headline":"Faire un site statique avec Hugo et l\u0027héberger sur Github","description":"","inLanguage":"en-US","author":"","creator":"","publisher":"","accountablePerson":"","copyrightHolder":"","copyrightYear":"2021","datePublished":"2021-11-28 21:36:49 \u002b0100 \u002b0100","dateModified":"2021-11-28 21:36:49 \u002b0100 \u002b0100","url":"https:\/\/www.lenorcy.fr\/blog\/hugo-github\/","wordCount":"423","keywords":["Blog"]}</script>
 </head>
 <body>
 <div class=burger__container>
@@ -71,12 +71,12 @@
 <pre><code>hugo new site alenorcy.github.io
 </code></pre>
 <h2 id=3>Création du dépôt Git local<a class=anchor href=#3>#</a></h2>
-<p>On crée le dépôt local et on récupère le thème <a href=https://github.com/jakewies/hugo-theme-codex target=_blank rel="noreferrer noopener">codex</a> :</p>
+<p>On crée le dépôt local :</p>
 <pre><code>cd alenorcy.github.io
 git init
 </code></pre>
 <h2 id=4>Mise en place d&rsquo;un thème pour Hugo<a class=anchor href=#4>#</a></h2>
-<p>On choisit le thème <strong>codex</strong></p>
+<p>On choisit le thème <a href=https://github.com/jakewies/hugo-theme-codex target=_blank rel="noreferrer noopener">codex</a> :</p>
 <pre><code>git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
 cp themes/hugo-theme-codex/exampleSite/config.toml .
 </code></pre>
