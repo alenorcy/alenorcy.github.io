@@ -66,8 +66,8 @@ cp themes/hugo-theme-codex/exampleSite/config.toml .
 
 On modifie quelques lignes du fichier _config.toml_ :
   * On commente la ligne **themesDir = "../../"**,
-  * On modifie **title**, **baseURL** dans les paramètres globales,
-  * On modifie **twitter** et **github** dans les paramètres optionels [params],
+  * On modifie **title**, **baseURL** dans les paramètres globaux,
+  * On modifie **twitter** et **github** dans les paramètres optionnels [params],
 
 ## Premier test {#5}
 
