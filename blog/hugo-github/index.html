@@ -16,7 +16,7 @@
 <link rel="shortcut icon" type=image/png href=/favicon.ico>
 <link type=text/css rel=stylesheet href=/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0=">
 <link type=text/css rel=stylesheet href=/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lenorcy.fr\/"},"articleSection":"blog","name":"Faire un site statique avec Hugo et l\u0027héberger sur Github","headline":"Faire un site statique avec Hugo et l\u0027héberger sur Github","description":"","inLanguage":"en-US","author":"","creator":"","publisher":"","accountablePerson":"","copyrightHolder":"","copyrightYear":"2021","datePublished":"2021-11-28 21:36:49 \u002b0100 \u002b0100","dateModified":"2021-11-28 21:36:49 \u002b0100 \u002b0100","url":"https:\/\/www.lenorcy.fr\/blog\/hugo-github\/","wordCount":"423","keywords":["Blog"]}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.lenorcy.fr\/"},"articleSection":"blog","name":"Faire un site statique avec Hugo et l\u0027héberger sur Github","headline":"Faire un site statique avec Hugo et l\u0027héberger sur Github","description":"","inLanguage":"en-US","author":"","creator":"","publisher":"","accountablePerson":"","copyrightHolder":"","copyrightYear":"2021","datePublished":"2021-11-28 21:36:49 \u002b0100 \u002b0100","dateModified":"2021-11-28 21:36:49 \u002b0100 \u002b0100","url":"https:\/\/www.lenorcy.fr\/blog\/hugo-github\/","wordCount":"451","keywords":["Blog"]}</script>
 </head>
 <body>
 <div class=burger__container>
@@ -45,17 +45,17 @@
 <time datetime="2021-11-28 21:36:49 +0100 +0100" class=post__date>Nov 28 2021</time>
 </header>
 <article class=post__content>
-<p>Voici la procédure pour créer une site statique avec <a href=https://gohugo.io/ target=_blank rel="noreferrer noopener">Hugo</a> et l&rsquo;héberger sur <a href=https://github.com target=_blank rel="noreferrer noopener">github</a> !</p>
-<p><em>Pré-requis : avoir déjà créé un compte Github</em></p>
-<ul>
-<li><a href=#1>Création d&rsquo;un repository Github</a></li>
-<li><a href=#2>Création du site en local (sur Ubuntu)</a></li>
-<li><a href=#3>Création du dépôt Git local</a></li>
-<li><a href=#4>Mise en place d&rsquo;un thème pour Hugo</a></li>
-<li><a href=#5>Premier test</a></li>
-<li><a href=#6>Première synchronisation distante</a></li>
-<li><a href=#7>Configuration finale sur le repositoy Github</a></li>
-</ul>
+<p>Voici la procédure pour créer un site statique avec <a href=https://gohugo.io/ target=_blank rel="noreferrer noopener">Hugo</a> (écrit avec le langage <a href=https://fr.wikipedia.org/wiki/Go_%28langage%29 target=_blank rel="noreferrer noopener">Go</a>) et l&rsquo;héberger sur <a href=https://github.com target=_blank rel="noreferrer noopener">github</a> !</p>
+<p>Le contenu du site sera rédigé en <a href=https://fr.wikipedia.org/wiki/Markdown target=_blank rel="noreferrer noopener">Markdown</a> dans un simple éditeur de texte ou même avec [VSCodium] (<a href=https://vscodium.com/ target=_blank rel="noreferrer noopener">https://vscodium.com/</a>) !</p>
+<p><em>Pré-requis : avoir déjà créé un compte Github</em> !</p>
+<p>Sommaire :</p>
+<p><a href=#1>Création d&rsquo;un repository Github</a><br>
+<a href=#2>Création du site en local (sur Ubuntu)</a><br>
+<a href=#3>Création du dépôt Git local</a><br>
+<a href=#4>Mise en place d&rsquo;un thème pour Hugo</a><br>
+<a href=#5>Premier test</a><br>
+<a href=#6>Première synchronisation distante</a><br>
+<a href=#7>Configuration finale sur le repositoy Github</a></p>
 <h2 id=1>Création du repository Github<a class=anchor href=#1>#</a></h2>
 <p>Depuis votre profil, cliquez sur l&rsquo;onglet sur <em>Repositories</em> puis sur le bouton <em>New</em> :</p>
 <p><img src=/images/Selection_516.png alt="New repository Github"></p>
