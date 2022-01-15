@@ -9,17 +9,21 @@ tags: [hugo,web]
 math: false
 toc: false
 ---
-Voici la procédure pour créer une site statique avec [Hugo](https://gohugo.io/) et l'héberger sur [github](https://github.com) !
+Voici la procédure pour créer un site statique avec [Hugo](https://gohugo.io/) (écrit avec le langage [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l'héberger sur [github](https://github.com) !
 
-_Pré-requis : avoir déjà créé un compte Github_
+Le contenu du site sera rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) dans un simple éditeur de texte ou même avec [VSCodium] (https://vscodium.com/) !
 
-  * [Création d'un repository Github](#1)
-  * [Création du site en local (sur Ubuntu)](#2)
-  * [Création du dépôt Git local](#3)
-  * [Mise en place d'un thème pour Hugo](#4)
-  * [Premier test](#5)
-  * [Première synchronisation distante](#6)
-  * [Configuration finale sur le repositoy Github](#7)
+_Pré-requis : avoir déjà créé un compte Github_ !
+
+Sommaire :
+
+[Création d'un repository Github](#1)  
+[Création du site en local (sur Ubuntu)](#2)  
+[Création du dépôt Git local](#3)  
+[Mise en place d'un thème pour Hugo](#4)  
+[Premier test](#5)  
+[Première synchronisation distante](#6)  
+[Configuration finale sur le repositoy Github](#7)  
 
 ## Création du repository Github {#1}
 
