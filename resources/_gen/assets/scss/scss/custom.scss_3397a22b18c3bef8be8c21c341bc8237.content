@@ -1,1 +1,1 @@
-.post{max-width:44rem}.post img{max-width:600px}
+.post{max-width:44rem}.post img{max-width:600px}@media(max-width:500px){img#optionalstuff{display:none}}

@@ -5,7 +5,7 @@
 {{ define "main" }}
 <div class="splash-container">
   <div class="splash">
-    <h1><img style="border-radius: 50%;margin-bottom: 70px;width: 160px;" src=/images/logo.png /></h1>
+    <h1><img id=optionalstuff style="border-radius: 50%;margin-bottom: 70px;width: 160px;" src=/images/logo.png /></h1>
     <h1>{{ .Params.heading }}<span class="fancy">.</span></h1>
     {{ if isset .Params "handle" }}
     <span class="handle">{{ .Params.handle }}</span>
