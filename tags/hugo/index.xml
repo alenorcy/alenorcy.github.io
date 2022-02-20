@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hugo on Arnaud LE NORCY</title><link>https://www.lenorcy.fr/tags/hugo/</link><description>Recent content in hugo on Arnaud LE NORCY</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© {year}</copyright><lastBuildDate>Sun, 28 Nov 2021 21:36:49 +0100</lastBuildDate><atom:link href="https://www.lenorcy.fr/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Faire un site statique avec Hugo et l'héberger sur Github</title><link>https://www.lenorcy.fr/blog/hugo-github/</link><pubDate>Sun, 28 Nov 2021 21:36:49 +0100</pubDate><guid>https://www.lenorcy.fr/blog/hugo-github/</guid><description>Voici la procédure pour créer un site statique avec Hugo (écrit avec le langage Go) et l&amp;rsquo;héberger sur github !
-Le contenu du site sera rédigé en Markdown dans un simple éditeur de texte ou même avec [VSCodium] (https://vscodium.com/) !
+Le contenu du site sera rédigé en Markdown dans un simple éditeur de texte ou même avec VSCodium !
 Pré-requis : avoir déjà créé un compte Github !
 Sommaire :
 Création d&amp;rsquo;un repository Github
