@@ -11,7 +11,7 @@ toc: false
 ---
 Voici la procédure pour créer un site statique avec [Hugo](https://gohugo.io/) (écrit avec le langage [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l'héberger sur [github](https://github.com) !
 
-Le contenu du site sera rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) dans un simple éditeur de texte ou même avec [VSCodium] (https://vscodium.com/) !
+Le contenu du site sera rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) dans un simple éditeur de texte ou même avec [VSCodium](https://vscodium.com/) !
 
 _Pré-requis : avoir déjà créé un compte Github_ !
 
@@ -31,7 +31,7 @@ Depuis votre profil, cliquez sur l'onglet sur _Repositories_ puis sur le bouton 
 
 ![New repository Github](/images/Selection_516.png)
 
-Saisissez un nom avec ce format **[login].github.io** (attention ce format précis est indispensable !) :
+Saisissez un nom avec ce format **[compte].github.io** (attention ce format précis est indispensable ! Il faut absolument précéder _.github.io_ de son **compte**. Mon compte Github est _alenorcy_) :
 
 ![Repository name](/images/Selection_518.png)
 
