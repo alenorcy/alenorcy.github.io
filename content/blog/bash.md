@@ -30,6 +30,10 @@ SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u2
 ╰─➤ cat < /dev/tcp/127.0.0.1/23
 bash: connect: Connexion refusée
 bash: /dev/tcp/127.0.0.1/23: Connexion refusée
+╭─lenorcy@mydebian:~
+╰─➤ nc -vz www.lenorcy.info 22
+Connection to www.lenorcy.info (217.160.28.69) 22 port [tcp/ssh] succeeded!
+
 ```
 
 # écrire dans un fichier
