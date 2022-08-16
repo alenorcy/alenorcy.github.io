@@ -10,7 +10,7 @@ math: false
 toc: false
 ---
 
-Exécuter une commande shell via ansible en ligne de commande
+Exécuter une commande shell via ansible en ligne de commande :
 ```
 ╭─lenorcy@mydebian:~
 ╰─➤ ansible -m shell -a 'cat /etc/redhat-release' redhat-group
