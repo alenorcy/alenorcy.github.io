@@ -10,12 +10,12 @@ math: false
 toc: false
 ---
 
-Objectif : gérer la machine `lab.lenorcy.fr` depuis le serveur d'administration `admin.lenorcy.fr` avec ansible
+**Objectif** : Pouvoir administrer la machine `lab.lenorcy.fr` depuis le __noeud ansible__ `admin.lenorcy.fr`
 
 
-## Installation d'Ansible sur le serveur d'administration ##
+## Installation d'Ansible sur le  depuis le __noeud ansible__ `admin.lenorcy.fr`
 
-documentation officielle : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible
+doc officielle : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible
 
 Vérification de la présence de pip :
 ```
@@ -32,7 +32,7 @@ Installation d'ansible :
 Mise à niveau d'ansible :
 ```
 ╭─lenorcy@mydebian:~
-╰─➤  python3 -m pip install --user ansible
+╰─➤  python3 -m pip upgrade --user ansible
 ```
 
 Création de la paire de clés et copie de la clé publique sur lab.lenorcy.fr :
@@ -42,8 +42,5 @@ ssh-copy-id -i ~/.ssh/ansible-home.pub ansible@lab.lenorcy.fr
 ```
 
 ## 
-
-
-
 
 
