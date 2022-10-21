@@ -9,9 +9,9 @@ tags: [hugo,web]
 math: false
 toc: false
 ---
-Ce document décrit une procédure pour créer un site statique avec [Hugo](https://gohugo.io/) (écrit avec le langage [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l'héberger sur [github](https://github.com) !
+Ce document décrit une procédure pour créer un site statique avec [Hugo](https://gohugo.io/) (écrit avec le langage [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l'héberger sur [github](https://github.com)... sur l'exemple de ce site : [https://alenorcy.github.io](https://alenorcy.github.io) 
 
-Par la suite, le contenu du site pourra être rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) avec par exemple [VSCodium](https://vscodium.com/) ou bien [noevim](https://neovim.io/) + [lunarvim](https://github.com/LunarVim/LunarVim)!
+Par la suite, le contenu du site pourra être rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) avec par exemple [VSCodium](https://vscodium.com/) ou bien [neovim](https://neovim.io/) + [lunarvim](https://github.com/LunarVim/LunarVim)!
 
 _Pré-requis : avoir déjà créé un compte Github_ !
 
