@@ -10,10 +10,10 @@ math: false
 toc: false
 ---
 
-**Objectif** : Pouvoir administrer la machine `lab.lenorcy.fr` depuis le __noeud ansible__ `admin.lenorcy.fr`
+**Objectif** : Pouvoir administrer la machine `lab.lenorcy.fr` depuis le __node manager__ `admin.lenorcy.fr`
 
 
-## Installation d'Ansible sur le  depuis le __noeud ansible__ `admin.lenorcy.fr`
+## Installation d'Ansible sur le  depuis le __node manager__ 
 
 doc officielle : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible
 
