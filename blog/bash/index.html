@@ -10,11 +10,11 @@ SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u2
 ╰─➤ cat &lt; /dev/tcp/127.0.0.1/23
 bash: connect: Connexion refusée
 bash: /dev/tcp/127.0.0.1/23: Connexion refusée
-</code></pre><pre><code>╭─lenorcy@mydebian:~
+</code></pre><p>avec netcat :</p><pre><code>╭─lenorcy@mydebian:~
 ╰─➤ nc -vz www.lenorcy.info 22
 Connection to www.lenorcy.info (217.160.28.69) 22 port [tcp/ssh] succeeded!
 
-</code></pre><p>avec netcat :</p><h1 id=écrire-dans-un-fichier>écrire dans un fichier</h1><pre><code>╭─lenorcy@mydebian:~
+</code></pre><h1 id=écrire-dans-un-fichier>écrire dans un fichier</h1><pre><code>╭─lenorcy@mydebian:~
 ╰─➤ cat &gt; fichier.txt &lt;&lt;EOL
 Ce fichier contiendra uniquement cette ligne.
 EOL
