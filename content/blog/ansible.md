@@ -4,15 +4,46 @@ date: 2022-01-16T16:34:28+01:00
 slug: ""
 description: ""
 keywords: []
-draft: true
+draft: false 
 tags: [ansible, shell]
 math: false
 toc: false
 ---
 
-Exécuter une commande shell via ansible en ligne de commande :
+Objectif : gérer la machine `lab.lenorcy.fr` depuis le serveur d'administration `admin.lenorcy.fr` avec ansible
+
+
+## Installation d'Ansible sur le serveur d'administration ##
+
+documentation officielle : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible
+
+Vérification de la présence de pip :
 ```
 ╭─lenorcy@mydebian:~
-╰─➤ ansible -m shell -a 'cat /etc/redhat-release' redhat-group
-Vault password:
+╰─➤  python3 -m pip -V
 ```
+
+Installation d'ansible :
+```
+╭─lenorcy@mydebian:~
+╰─➤  python3 -m pip install --user ansible
+```
+
+Mise à niveau d'ansible :
+```
+╭─lenorcy@mydebian:~
+╰─➤  python3 -m pip install --user ansible
+```
+
+Création de la paire de clés et copie de la clé publique sur lab.lenorcy.fr :
+```
+ssh-keygen -f ~/.ssh/ansible-home
+ssh-copy-id -i ~/.ssh/ansible-home.pub ansible@lab.lenorcy.fr
+```
+
+## 
+
+
+
+
+

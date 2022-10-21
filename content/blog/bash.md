@@ -21,6 +21,8 @@ export PS1="╭─\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0
 
 
 # alternative à telnet pour tester l'ouverture d'un port
+
+avec cat :
 ```
 ╭─lenorcy@mydebian:~
 ╰─➤ cat < /dev/tcp/www.lenorcy.fr/22
@@ -37,7 +39,7 @@ bash: /dev/tcp/127.0.0.1/23: Connexion refusée
 Connection to www.lenorcy.info (217.160.28.69) 22 port [tcp/ssh] succeeded!
 
 ```
-
+avec netcat :
 # écrire dans un fichier
 ```
 ╭─lenorcy@mydebian:~
