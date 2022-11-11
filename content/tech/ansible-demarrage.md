@@ -48,7 +48,7 @@ mkdir -p inventories/group_vars/all
 
 Création du fichier de configuration de base ansible.cfg :
 ```
-cati > ansible.cfg <<EOL 
+cat > ansible.cfg <<EOL 
 [defaults]
 inventory          = inventories
 ask_vault_pass     = true
@@ -110,8 +110,7 @@ EOL
 
 On utilise la commande ansible-playbook :
 ```
-╭─~
-╰─➤ ansible-playbook ping.yml -l lab
+$ ansible-playbook ping.yml -l lab
 Vault password: 
 
 PLAY [all] **********************************************************************************************
