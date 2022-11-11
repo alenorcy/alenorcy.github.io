@@ -61,14 +61,14 @@ copyright = "© {year}"
 [[menu.main]]
   identifier = "accueil"
   name = " accueil"
-  title = "Accueil"
+  title = "accueil"
   url = "/"
 
 [[menu.main]]
-  identifier = "blog"
-  name = "blog"
-  title = "Blog"
-  url = "/blog"
+  identifier = "tech"
+  name = "tech"
+  title = "tech"
+  url = "/tech"
 
 
 
