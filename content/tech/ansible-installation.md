@@ -14,7 +14,7 @@ toc: false
 
 ## Installation d'Ansible sur le __node manager__ 
 
-[Documention officielle](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible)
+[Documentation officielle](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible)
 
 Vérification de la présence de pip :
 ```
