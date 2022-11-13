@@ -1,5 +1,5 @@
 ---
-title: "[Ansible] Installation"
+title: "Ansible - Installation"
 date: 2022-01-16T16:34:28+01:00
 slug: ""
 description: ""
@@ -11,7 +11,6 @@ toc: false
 ---
 
 **Objectif** : Installer ansible sur la machine d'administration appelée également le __node manager__.
-
 
 ## Installation d'Ansible sur le __node manager__ 
 
@@ -32,7 +31,7 @@ Installation d'ansible :
 Mise à niveau d'ansible :
 ```
 ╭─lenorcy@mydebian:~
-╰─➤  python3 -m pip upgrade --user ansible
+╰─➤  python3 -m pip install --upgrade --user ansible
 ```
 
 
