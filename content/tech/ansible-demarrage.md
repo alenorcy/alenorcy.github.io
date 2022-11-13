@@ -1,5 +1,5 @@
 ---
-title: "[Ansible] Premier playbook !"
+title: "Ansible - Faire un premier playbook !"
 date: 2022-11-11T15:18:26+01:00
 slug: ""
 description: ""
@@ -10,7 +10,7 @@ math: false
 toc: false
 ---
 
-**Objectif:** Administrer la machine lab.lenorcy.fr depuis le __node manager__. Nous allons tout d'abord tenter de faire un ping via ansible.
+**Objectif:** Faire un script ansible - appelé playbook - qui permettra simplement de faire un __ping__ de la machine _lab.lenorcy.fr_ depuis le __node manager__ (noeud d'administration) sur lequel nous avons (installé ansible)[/tech/ansible-installation/]
 
 
 ## Connexion ssh avec clés depuis le __node manager__
@@ -108,7 +108,7 @@ EOL
 
 ## Exécution de notre premier playbook !
 
-On utilise la commande ansible-playbook :
+On utilise la commande **ansible-playbook** :
 ```
 $ ansible-playbook ping.yml -l lab
 Vault password: 
