@@ -10,7 +10,7 @@ math: false
 toc: false
 ---
 
-**Objectif:** Faire un script ansible - appelé playbook - qui permettra simplement de faire un __ping__ de la machine _lab.lenorcy.fr_ depuis le __node manager__ (noeud d'administration) sur lequel nous avons (installé ansible)[/tech/ansible-installation/]
+**Objectif:** Faire un playbook qui permettra de faire un __ping__ de _lab.lenorcy.fr_ depuis le __node manager__ (noeud d'administration) sur lequel nous avons (installé ansible)[/tech/ansible-installation/]
 
 
 ## Connexion ssh avec clés depuis le __node manager__
