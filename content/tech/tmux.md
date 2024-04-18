@@ -79,7 +79,7 @@ Précédemment utilisé :
   * [ctrl]+[B] puis [;]
 
 Echanger les panneaux :
-[ctrl]+[B] puis [o]
+  * [ctrl]+[B] puis [o]
 
 Fermer un panneau (ou une fenêtre) :
   * [ctrl]+[B] puis \[x\]
