@@ -1,86 +1,91 @@
 ---
 title: "Tmux - Commandes de base"
 date: 2024-04-16T16:34:28+01:00
-slug: ""
-description: ""
-keywords: []
-draft: false 
 tags: [tmux, shell]
-math: false
+draft: false
 toc: false
 ---
 
-Mémo des commandes de base de **Tmux** (multiplexeur de terminaux) 
+🧭 Mémo des principales commandes du multiplexeur de terminaux **Tmux**.
 
-## Sessions :
+---
 
-Lister les sessions :
-  * `$ tmux ls`
+## 🗂️ Sessions
 
-Démarrer une session :
-  * `$ tmux`
+| Action | Raccourci clavier | Commande |
+|:--|:--|:--|
+| **Lister les sessions** | — | `tmux ls` |
+| **Créer une session** | — | `tmux` |
+| **Créer une session nommée** | — | `tmux new -s <nom>` |
+| **Renommer la session** | `Ctrl+b`, `$` | `tmux rename-session -t <ancien> <nouveau>` |
+| **Attacher une session** | — | `tmux attach -t <nom>` |
+| **Détacher la session** | `Ctrl+b`, `d` | `tmux detach` |
+| **Tuer une session** | — | `tmux kill-session -t <nom>` |
+| **Basculer entre sessions** | `Ctrl+b`, `s` | — |
+| **Rejoindre la dernière session** | `Ctrl+b`, `L` | — |
 
-Démarrer une session en la nommant directement :
-  * `$ tmux new -s un-nom`
+---
 
-Renommer une session :
-  * [**ctrl**]+[**B**] puis [**$**]
-  * `$ tmux rename-session [-t name] [new-name]`
+## 🪟 Fenêtres
 
-Attacher une session :
-  * `$ tmux a -t <name>`
+| Action | Raccourci clavier | Commande |
+|:--|:--|:--|
+| **Nouvelle fenêtre** | `Ctrl+b`, `c` | `tmux new-window` |
+| **Renommer la fenêtre** | `Ctrl+b`, `,` | `tmux rename-window <nom>` |
+| **Fenêtre suivante** | `Ctrl+b`, `n` | `tmux next-window` |
+| **Fenêtre précédente** | `Ctrl+b`, `p` | `tmux previous-window` |
+| **Aller à une fenêtre (0–9)** | `Ctrl+b`, `0–9` | `tmux select-window -t :0-9` |
+| **Lister les fenêtres** | `Ctrl+b`, `w` | — |
+| **Fermer la fenêtre** | `Ctrl+b`, `&` | `tmux kill-window` |
 
-Tuer une session :
-  * `$ tmux kill-session -t <name>`
+---
 
-Détacher une session :
-  * [**ctrl**]+[**B**] puis [**d**]
-  * `$ tmux -d -t <name>`
+## 🧩 Panneaux
 
+| Action | Raccourci clavier | Commande |
+|:--|:--|:--|
+| **Diviser verticalement** | `Ctrl+b`, `%` | `tmux split-window -h` |
+| **Diviser horizontalement** | `Ctrl+b`, `"` | `tmux split-window` |
+| **Aller au panneau voisin** | `Ctrl+b`, flèches | `tmux select-pane -[UDLR]` |
+| **Basculer entre panneaux (cyclique)** | `Ctrl+b`, `o` | — |
+| **Dernier panneau actif** | `Ctrl+b`, `;` | — |
+| **Échanger deux panneaux** | `Ctrl+b`, `Ctrl+o` | — |
+| **Agrandir/réduire un panneau** | `Ctrl+b`, `z` | — |
+| **Fermer le panneau** | `Ctrl+b`, `x` | `exit` |
 
-## Fenêtres :
+---
 
-Création d'une fenêtre :
-  * [**ctrl**]+[**B**] puis [**c**]
-  * `$ tmux new-window`
+## 📋 Gestion du texte
 
-Renommer la fenêtre :
-  * [**ctrl**]+[**B**] puis [**,**]
-  * `$ tmux rename-window nouveau_nom_sans_espace`
+| Action | Raccourci clavier | Commande |
+|:--|:--|:--|
+| **Entrer en mode copie** | `Ctrl+b`, `[` | — |
+| **Quitter le mode copie** | `q` ou `Enter` | — |
+| **Copier la sélection** | `Space` (début) → `Enter` (copie) | — |
+| **Coller** | `Ctrl+b`, `]` | — |
 
-Fenêtre suivante :
-  * [**ctrl**]+[**B**] puis [**n**] 
-  * `$ tmux select-window -n`
+> 💡 Astuce : On peut configurer tmux pour utiliser le presse-papiers système (`set -g mouse on`, `set-option -g set-clipboard on`).
 
-Fenêtre précédante :
-  * [**ctrl**]+[**B**] puis [**p**]
-  * `$ tmux select-window -p`
+---
 
-Fenêtre précise (par numéro) :
-  * [**ctrl**]+[**B**] puis [**0…9**]
-  * `$ tmux select-window -t :0-9`
+## ⚙️ Divers & astuces
 
+| Action | Raccourci clavier | Commande |
+|:--|:--|:--|
+| **Afficher l’horloge** | `Ctrl+b`, `t` | — |
+| **Afficher la liste des raccourcis** | `Ctrl+b`, `?` | — |
+| **Recharger la configuration** | — | `tmux source-file ~/.tmux.conf` |
+| **Quitter Tmux** | — | `exit` ou `Ctrl+d` |
+| **Mode plein écran (zoom)** | `Ctrl+b`, `z` | — |
+| **Activer la souris** | — | `set -g mouse on` dans `~/.tmux.conf` |
 
-## Panneaux :
+---
 
-Diviser verticalement :
-  * [**ctrl**]+[**B**] puis [**%**]
-  * `$ tmux split-window -h`
-
-Diviser horizontalement :
-  * [**ctrl**]+[**B**] puis [**“**]
-  * `$ tmux split-window`
-
-Aller au panneau d'à côté :
-  * [**ctrl**]+[**B**] puis flèche (..)
-
-Précédemment utilisé :
-  * [**ctrl**]+[**B**] puis [**;**]
-
-Changer de panneaux (de manière cyclique) :
-  * [**ctrl**]+[**B**] puis [**o**]
-
-Fermer un panneau (ou une fenêtre) :
-  * [**ctrl**]+[**B**] puis [**x**]
-  * `$ exit`
-
+💡 **Conseils**
+- Chaque **session** peut contenir plusieurs **fenêtres**, elles-mêmes divisées en **panneaux**.  
+- `Ctrl+b d` (détacher) et `tmux a` (reprendre).  
+- Faire des alias :  
+  ```bash
+  alias ta="tmux attach -t"
+  alias tn="tmux new -s"
+  alias tls="tmux ls"
