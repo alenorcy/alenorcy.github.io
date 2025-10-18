@@ -1,1 +1,30 @@
-www.lenorcy.fr
+2024-04-20T18:29:53+02:00 mxb2-2 mxb2-2/smtpd_public[10241]: CB28460B60: client=xvfrnffp.outbound-mail.sendgrid.net[168.245.47.243]
+2024-04-20T18:29:53+02:00 mxb2-2 mxb2-2/cleanup[11045]: CB28460B60: message-id=<9b2334d3-8b09-4ec2-b9b9-877778081f8a@lokicollective.org>
+2024-04-20T18:29:54+02:00 mxb2-2 ulog: [006E18A1] qid=CB28460B60,ip=168.245.47.243,sender=bounces+43529420-c07a-bertrand=agrocampus-ouest.fr@em1331.lokicollective.org,site=SITE000333,domain=agrocampus-ouest.fr,recipient=bertrand@agrocampus-ouest.fr: vaderetro(state=0,score=21,cause=gggruggvucftvghtrhhoucdtuddrgedvledrudekgedguddtudcutefuodetggdotefrodftvfcurfhrohhfihhlvgemucftgffptefvgfftpdggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecutfgtvhguucffrghtvgcurghnohhmrghlhiculddvuddmnecujfgurhepkfggfgfhufffvfgtseiitderredtvddtnecuhfhrohhmpehmrghrtghushdrhhholhiifhgvlhguvghrsehlohhkihgtohhllhgvtghtihhvvgdrohhrghenucggtffrrghtthgvrhhnpeffteekheetgeelhffgtdfgtdfhkedvtddujeegiefhlefhheeigfeltddufeeiffenucfkphepudeikedrvdeghedrgeejrddvgeefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmohguvgepshhmthhppdhhvghlohepgihvfhhrnhhffhhprdhouhhtsghouhhnugdqmhgrihhlrdhsvghnughgrhhiugdrnhgvthdpihhnvghtpeduieekrddvgeehrdegjedrvdegfedpmhgrihhlfhhrohhmpegsohhunhgtvghsodegfeehvdelgedvtddqtgdtjegrqdgsvghrthhrrghnugeprghgrhhotggrmhhpuhhsqdhouhgvshhtrdhfrhesvghmudeffedurdhlohhkihgtohhllhgvtghtihhvvgdrohhrghdpnhgspghrtghpthhtohepuddprhgtphhtthhopegsvghrthhrrghnugesrghgrhhotggrmhhpuhhsqdhouhgvshhtrdhfrh)
+2024-04-20T18:29:54+02:00 mxb2-2 ulog: [006E18A1] qid=CB28460B60,ip=168.245.47.243,sender=bounces+43529420-c07a-bertrand=agrocampus-ouest.fr@em1331.lokicollective.org,site=SITE000333,domain=agrocampus-ouest.fr,recipient=bertrand@agrocampus-ouest.fr: drweb(virused=false,virus=,error=drweb is no running or module is not loaded)
+2024-04-20T18:29:54+02:00 mxb2-2 ulog: [006E18A1] qid=CB28460B60,ip=168.245.47.243,sender=bounces+43529420-c07a-bertrand=agrocampus-ouest.fr@em1331.lokicollective.org,site=SITE000333,domain=agrocampus-ouest.fr,recipient=bertrand@agrocampus-ouest.fr: dkim.enabled=false,bad ext=pcre:\.(com|exe|pif|bat|scr|cpl|cmd|dll|lnk|inf|msi|sct|vbs|vb|vbe|xlsm|docm|pptm)$,max size=20000
+2024-04-20T18:29:54+02:00 mxb2-2 ulog: [006E18A1] qid=CB28460B60,ip=168.245.47.243,sender=bounces+43529420-c07a-bertrand=agrocampus-ouest.fr@em1331.lokicollective.org,site=SITE000333,domain=agrocampus-ouest.fr,recipient=bertrand@agrocampus-ouest.fr: action=route,status=legit,spamlevel=unknwon,tag=nil,stop=nil,reply=nil
+2024-04-20T18:29:54+02:00 mxb2-2 mxb2-2/qmgr[48292]: CB28460B60: from=<bounces+43529420-c07a-bertrand=agrocampus-ouest.fr@em1331.lokicollective.org>, size=14454, nrcpt=1 (queue active)
+2024-04-20T18:29:54+02:00 mxb2-2 mxb2-2/smtp[10021]: CB28460B60: to=<bertrand@agrocampus-ouest.fr>, relay=mx2.partage.renater.fr[194.254.241.20]:25, delay=0.47, delays=0.4/0/0.05/0.02, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 329C8141A79)
+2024-04-20T18:29:54+02:00 mxb2-2 mxb2-2/qmgr[48292]: CB28460B60: removed
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+</head>
+<body>
+<main class="container">
+
+</main>
+</body>
+</html>
