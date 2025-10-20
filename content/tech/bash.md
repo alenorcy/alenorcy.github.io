@@ -1,5 +1,5 @@
 ---
-title: "Bash"
+title: "commandes bash"
 date: 2022-01-08T14:01:13+01:00
 slug: ""
 description: ""
@@ -9,46 +9,42 @@ tags: [bash,shell]
 math: false
 toc: false
 ---
-# prompt
+## 💻 prompt
 ```
-╭─lenorcy@mydebian:~
-╰─➤ grep "export PS1" ~/.bashrc
+$ grep "export PS1" ~/.bashrc
 export PS1="╭─\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n╰─➤ "
+╭─lenorcy@mydebian:~
+╰─➤ 
 
 ```
 
 ![prompt](/images/prompt.png)
 
 
-# alternative à telnet pour tester l'ouverture d'un port
+## 🌐 alternatives à telnet pour tester l'ouverture d'un port
 
 avec cat :
 ```
-╭─lenorcy@mydebian:~
-╰─➤ cat < /dev/tcp/www.lenorcy.fr/22
+$ cat < /dev/tcp/www.lenorcy.fr/22
 SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u2
 ^C
-╭─lenorcy@mydebian:~
-╰─➤ cat < /dev/tcp/127.0.0.1/23
+$ cat < /dev/tcp/127.0.0.1/23
 bash: connect: Connexion refusée
 bash: /dev/tcp/127.0.0.1/23: Connexion refusée
 ```
 avec netcat :
 ```
-╭─lenorcy@mydebian:~
-╰─➤ nc -vz www.lenorcy.info 22
+$ nc -vz www.lenorcy.info 22
 Connection to www.lenorcy.info (217.160.28.69) 22 port [tcp/ssh] succeeded!
 
 ```
 
-# écrire dans un fichier
+## 📝 écrire dans un fichier
 ```
-╭─lenorcy@mydebian:~
-╰─➤ cat > fichier.txt <<EOL
+$ cat > fichier.txt <<EOL
 Ce fichier contiendra uniquement cette ligne.
 EOL
-╭─lenorcy@mydebian:~
-╰─➤ cat >> fichier.txt <<EOL
+$ cat >> fichier.txt <<EOL
 Ajoute cette ligne au fichier s'il existe.
 EOL
-```
+``

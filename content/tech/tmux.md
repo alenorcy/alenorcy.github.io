@@ -1,7 +1,7 @@
 ---
-title: "Tmux - Commandes de base"
+title: "commandes de base Tmux"
 date: 2024-04-16T16:34:28+01:00
-tags: [tmux, shell]
+tags: [tmux, sysadmin, shell]
 draft: false
 toc: false
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Faire un site statique avec Hugo et l'héberger sur Github"
+title: "déploiement d'un site statique Hugo sur Github"
 date: 2021-11-28T21:36:49+01:00
 slug: ""
 description: ""
@@ -9,42 +9,47 @@ tags: [hugo,web]
 math: false
 toc: false
 ---
-Ce document décrit une procédure pour créer un site statique avec [Hugo](https://gohugo.io/) (écrit avec le langage [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l'héberger sur [Github](https://github.com)... sur l'exemple de ce site : [https://alenorcy.github.io](https://alenorcy.github.io) 
 
-Par la suite, le contenu du site pourra être rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) avec par exemple [VSCodium](https://vscodium.com/) ou bien [neovim](https://neovim.io/) + [lunarvim](https://github.com/LunarVim/LunarVim)!
+🧭 **Objectif** : Créer un site statique avec [Hugo](https://gohugo.io/) (écrit en [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l’héberger sur [GitHub](https://github.com) — sur l’exemple de ce site : [https://alenorcy.github.io](https://alenorcy.github.io).  
 
-_Pré-requis : avoir déjà créé un compte Github_ !
+Le contenu du site pourra ensuite être rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) avec, par exemple, [VSCodium](https://vscodium.com/) ou [Neovim](https://neovim.io/) + [LunarVim](https://github.com/LunarVim/LunarVim).
 
-Sommaire :
+> 💡 **Pré-requis** : Avoir déjà un compte GitHub.
+
+
+
+📚 **Sommaire** :
 
 [Création d'un repository Github](#1)  
-[Création du site en local (sur Ubuntu)](#2)  
+[Création du site en local](#2)  
 [Création du dépôt Git local](#3)  
 [Mise en place d'un thème pour Hugo](#4)  
 [Premier test](#5)  
 [Première synchronisation distante](#6)  
 [Configuration finale sur le repositoy Github](#7)  
 
-## Création du repository Github {#1}
+## 🏗️ Création du repository GitHub {#1}
 
-Depuis votre profil, cliquez sur l'onglet sur _Repositories_ puis sur le bouton _New_ : 
+Depuis votre profil, cliquez sur l’onglet **Repositories**, puis sur le bouton **New** :  
 
 ![New repository Github](/images/Selection_516.png)
 
-Saisissez un nom avec ce format **[compte].github.io** (attention ce format précis est indispensable ! Il faut absolument précéder _.github.io_ de son **compte**. Mon compte Github est _alenorcy_) :
+Saisissez un nom au format **[compte].github.io** (⚠️ ce format est indispensable — il faut précéder `.github.io` de votre nom de compte).  
+Exemple : mon compte GitHub est **alenorcy**, donc mon dépôt s’appelle **alenorcy.github.io**.
 
 ![Repository name](/images/Selection_518.png)
 
-Github vous indique ensuite quelques conseils d'utilisation :
+GitHub vous indique ensuite quelques conseils d’utilisation :  
 
 ![Git advice](/images/Selection_471.png)
 
+---
 
-## Création du site en local (sur Ubuntu) {#2}
+## 💻 Création du site en local {#2}
 
-Installation de Hugo (sur Ubuntu 20.04) :
-```
-snap install hugo --channel=extended
+Installation de Hugo (avec snap sous Linux Debian) :
+```bash
+sudo snap install hugo --channel=extended
 ```
 
 Création du site avec [Hugo](https://gohugo.io/) :
@@ -52,42 +57,45 @@ Création du site avec [Hugo](https://gohugo.io/) :
 hugo new site alenorcy.github.io
 ```
 
-## Création du dépôt Git local {#3}
+## 🧱 Création du dépôt Git local {#3}
 
-On crée le dépôt local :
-```
+Initialisez le dépôt local :
+```bash
 cd alenorcy.github.io
 git init
 ```
 
-## Mise en place d'un thème pour Hugo {#4}
 
-On choisit le thème [codex](https://github.com/jakewies/hugo-theme-codex) :
-```
+## 🎨 Mise en place d'un thème pour Hugo {#4}
+
+Choisissons le thème [codex](https://github.com/jakewies/hugo-theme-codex) :
+```bash
 git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
 cp themes/hugo-theme-codex/exampleSite/config.toml .
 ```
 
-On modifie quelques lignes du fichier _config.toml_ :
-  * On commente la ligne **themesDir = "../../"**,
-  * On modifie **title**, **baseURL** dans les paramètres globaux,
-  * On modifie **twitter** et **github** dans les paramètres optionnels [params],
+Modifiez ensuite quelques lignes dans le fichier _config.toml_ :
+  * Commentez la ligne `themesDir = "../../"`
+  * Mettez à jour :
+     * **title** et **baseURL** dans la section globale
+     * **twitter** et **github** dans la section `[params]
 
-## Premier test {#5}
+## 🔎 Premier test {#5}
 
 Lancement du site en local :
-```
+```bash
 hugo server -D
 ```
 
-En lançant l'URL http://localhost:1313/ dans son navigateur, on peut vérifier si le site statique est OK :
+Puis ouvrez dans votre navigateur :
+http://localhost:1313/
 
 ![Hugo desktop screenshot](/images/screenshot-hugo.png)
 
-## Première synchronisation distante {#6}
+## 🚀 Première synchronisation distante {#6}
 
-On envoie les fichiers locaux vers la branche distante (main) :
-```
+Envoyez votre site local vers GitHub :
+```bash
 git add .
 git commit -m "premier commit"
 git branch -M main
@@ -95,65 +103,100 @@ git remote add origin https://*******-mon_token-***********@github.com/alenorcy/
 git push -u origin main
 ```
 
-## Configuration finale sur le repositoy Github {#7}
+## ⚙️ Configuration finale sur le repositoy Github {#7}
 
-Dans Settings > Pages > Source, on positionne construction du site statique dans la branche distante "gh-pages" :
+Dans **Settings > Pages > Source**, définissez la branche distante gh-pages pour la publication :
 ![gh-pages](/images/Selection_517.png)
 
-
-On créé le fichier _.github/workflows/gh-pages.yml_ suivant (depuis l'interface de Github dans la branche **main**) :
+Créez le fichier .github/workflows/hugo.yml (depuis GitHub, dans la branche main) :
 ```
-name: github pages
+# Workflow pour construire et déployer un site Hugo sur GitHub Pages
+name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches:
-      - main  # Set a branch to deploy
-  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  deploy:
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.102.3
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          hugo-version: 'latest'
-          extended: true
+          submodules: recursive
 
-      - name: Build
-        run: hugo --minify
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
-On le récupère en local :
-```
+Récupérez ensuite le fichier en local :
+```bash
 git pull
 ```
 
-Et c'est terminé :-)
+## 🌍 Publication et mise à jour
 
-On peut ensuite mettre à jour son site en local... et pousser les modifications sur Github :
+C'est terminé ! 🎉
 
-```
+Votre site est désormais publié sur GitHub Pages.
+
+Pour mettre à jour le contenu de votre site :
+```bash
 git add .
 git commit -m "mes modifications blabla"
 git push -u origin main
 ```
 
-Liens : 
+## 🔗 Liens utiles : 
   * https://gohugo.io/getting-started/quick-start/
   * https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
-Bonne journée.
+## 🧠 Bonne publication !

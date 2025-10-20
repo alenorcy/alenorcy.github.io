@@ -1,66 +1,85 @@
 ---
-title: "Ansible - Faire un premier playbook !"
+title: "premier playbook Ansible !"
 date: 2022-11-11T15:18:26+01:00
 slug: ""
-description: ""
-keywords: []
+description: "Créer un premier playbook Ansible pour tester la connexion ping depuis le node manager."
+keywords: [ansible, python, shell]
 draft: false
-tags: [ansible,python,shell]
+tags: [ansible, python, sysadmin, shell]
 math: false
 toc: false
 ---
+🧭 L'objectif est d'écrire un petit **playbook** qui permettra de faire un **ping** de _lab.lenorcy.fr_ depuis le **node manager** (noeud d'administration) sur lequel nous avons [installé Ansible](/tech/ansible-installation/).
 
-**Objectif:** Faire un playbook qui permettra de faire un __ping__ de _lab.lenorcy.fr_ depuis le __node manager__ (noeud d'administration) sur lequel nous avons [installé ansible](/tech/ansible-installation/)
+---
 
+## 🔑 Connexion SSH avec clés depuis le node manager
 
-## Connexion ssh avec clés depuis le __node manager__
-
-Sur la machine lab.lenorcy.fr, nous créons l'utilisateur ansible :
+Sur la machine `lab.lenorcy.fr`, créer l’utilisateur `ansible` :
 ```
-adduser ansible
-usermod -G sudo ansible
+sudo adduser ansible
+```
+Rajouter l'utilisateur au groupe `sudo` (pas nécessaire pour notre premier playbook)
+```
+sudo usermod -aG sudo ansible
 ```
 
-Sur le __node manager__ nous allons créer une paire de clés, puis nous copions la clé publique sur le noeud distant (lab.lenorcy.fr) :
+Sur le **node manager**, générer une paire de clés et copier la clé publique sur le noeud distant :
 ```
 ssh-keygen -f ~/.ssh/ansible-home
 ssh-copy-id -i ~/.ssh/ansible-home.pub ansible@lab.lenorcy.fr
 ```
 
-## Préparation de l'environnement
+---
 
-Nous allons créer l'arborescence de travail suivante sur le node manager :
+## 🧰 Préparation de l'environnement
+
+### 📁 Arborescence de travail sur le node manager :
 ```
 ├── ansible.cfg (f)
 ├── ping.yml (f)
-└── inventories 
-    ├── connexion-ansible.yml (f)
-    ├── group_vars
-    │   └── all
-    │       └── ansible_account_vault.yml (f)
+├── connexion-ansible.yml (f)
+├── group_vars (d)
+│   └── all (d)
+│   └── ansible_account_vault.yml (f)
+└── inventories (d)
     └── hosts (f)
-```  
+```
 
-Création des dossiers :
+### 📝 Fichiers à créer
+
+| Fichier | Emplacement | Rôle |
+|:--|:--|:--|
+| `ansible.cfg` | Racine du projet Ansible | Fichier de configuration principale d’Ansible : inventaire par défaut, options SSH, chemins des rôles, etc. |
+| `ping.yml` | Racine du projet Ansible | Playbook exécutant un test de connectivité (`ping`) sur les hôtes cibles. |
+| `inventories/hosts` | Dossier `inventories` | Liste des machines gérées (groupes et hôtes). |
+| `inventories/connexion-ansible.yml` | Dossier `inventories` | Variables globales définissant la méthode de connexion (`ansible_user`, `ansible_become`, etc.). |
+| `inventories/group_vars/all/ansible_account_vault.yml` | Dossier `inventories/group_vars/all` | Contient les secrets chiffrés via Ansible Vault (mot de passe sudo, tokens, etc.). |
+
+### 📁 Création des dossiers :
 ```
 mkdir -p inventories/group_vars/all
 ```
 
-Création du fichier de configuration de base ansible.cfg :
+---
+
+## 📦 Fichier de configuration `ansible.cfg`
 ```
-cat > ansible.cfg <<EOL 
+cat > ansible.cfg <<EOL
 [defaults]
-inventory          = inventories
-ask_vault_pass     = true
-roles_path         = roles
+inventory = inventories
+ask_vault_pass = true
+roles_path = roles
 interpreter_python = /usr/bin/python3
 
 [ssh_connection]
-pipelining         = True
+pipelining = True
 EOL
 ```
 
-Création du fichier inventaire hosts :
+---
+
+## 📂 Fichier d'inventaire `hosts`
 ```
 cat > inventories/hosts <<EOL
 [lab]
@@ -68,50 +87,62 @@ lab.lenorcy.fr
 EOL
 ```
 
-Création du fichier contenant les variables permettant la connexion avec le compte ansible :
+---
+
+## 🔧 Variables de connexion dans le fichier `connexion-ansible.yml`
 ```
 cat > inventories/connexion-ansible.yml <<EOL
-# Mode de connexion par défaut avec compte Ansible
 all:
-
-  vars:
-    ansible_user: ansible 
-    ansible_become: yes
-    ansible_become_method: sudo
-    ansible_become_pass: "{{ ansible_account_password }}"
+vars:
+ansible_user: ansible
+ansible_become: yes
+ansible_become_method: sudo
+ansible_become_pass: "{{ ansible_account_password }}"
 EOL
 ```
 
-Création du fichier __vault__ qui contiendra le secret : 
+> Seul `ansible_user` n'est véritablement nécessaire pour ce simple premier playbook 
+
+---
+
+## 🔐 Vault pour le mot de passe
+
+Créer le fichier `Vault` :
 ```
-ansible-vault edit ansible_account_vault.yml
+ansible-vault edit inventories/group_vars/all/ansible_account_vault.yml
 ```
 
-Nous y mettons le mot de passe :
+Ajouter le mot de passe :
 ```
 ansible_account_password: "censured"
 ```
-Ainsi positionné dans l'arborescence, ce mot de passe pourra servir à administrer tous les noeuds.
 
-Création de notre premier script ansible (qu'on appelle également **playbook**) qui réalisera un test de ping ! :
-```
-cat > ping.yml <<EOL 
+> Le `vault` n'est pas nécessaire pour ce premier playbook. Nous aurons rapidement besoin de privilèges pour exécuter certaines opérations.
+
 ---
-- hosts: all
-  vars:
-  # puisque la commande ping ne necessite pas d'être root, on positionne ansible_become à no
-    ansible_become: no
-  tasks:
-    - ping:
-EOL    
+
+## 📝 Création du premier playbook `ping.yml`
+```
+cat > ping.yml <<EOL
+
+    hosts: all
+    vars:
+    ansible_become: no # ping n'a pas besoin d'être root
+    tasks:
+
+        ping:
+EOL
 ```
 
-## Exécution de notre premier playbook !
+---
 
-On utilise la commande **ansible-playbook** :
+## 🚀 Exécution du playbook
 ```
-$ ansible-playbook ping.yml -l lab
-Vault password: 
+ansible-playbook ping.yml -l lab
+
+
+Entrer le mot de passe du Vault si demandé.  
+Exemple de sortie :
 
 PLAY [all] **********************************************************************************************
 
@@ -122,15 +153,26 @@ TASK [ping] ********************************************************************
 ok: [lab.lenorcy.fr]
 
 PLAY RECAP **********************************************************************************************
-lab.lenorcy.fr             : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+lab.lenorcy.fr : ok=2 changed=0 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
 ```
 
-Il existe un module **ping** évitant la création d'un playbook. Il suffit de le charger via la commande **ansible** :
+---
+
+## 💡 Alternative : module ping directement
+
+Il existe un module **ping** évitant la création d’un playbook :
 ```
-$ ansible -m ping lab.lenorcy.fr -e ansible_become=no
-Vault password: 
+ansible -m ping lab.lenorcy.fr -e ansible_become=no
+```
+
+Exemple de sortie :
+```
 lab.lenorcy.fr | SUCCESS => {
-    "changed": false,
-    "ping": "pong"
+"changed": false,
+"ping": "pong"
 }
 ```
+
+> Très pratique pour tester rapidement la connectivité Ansible.
+
+---
