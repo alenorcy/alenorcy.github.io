@@ -12,7 +12,7 @@ toc: false
 
 🧭 **Objectif** : Créer un site statique avec [Hugo](https://gohugo.io/) (écrit en [Go](https://fr.wikipedia.org/wiki/Go_(langage))) et l’héberger sur [GitHub](https://github.com) — sur l’exemple de ce site : [https://alenorcy.github.io](https://alenorcy.github.io).  
 
-Le contenu du site pourra ensuite être rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown) avec, par exemple, [VSCodium](https://vscodium.com/) ou [Neovim](https://neovim.io/) + [LunarVim](https://github.com/LunarVim/LunarVim).
+Le contenu du site pourra ensuite être rédigé en [Markdown](https://fr.wikipedia.org/wiki/Markdown).
 
 > 💡 **Pré-requis** : Avoir déjà un compte GitHub.
 
